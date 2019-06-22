@@ -1,0 +1,26 @@
+{
+    "Host": "irc.chat.twitch.tv",
+    "Port": 6667,
+    "Channel": "#<channel>",
+    "Nickname": "<name>",
+    "Authentication": "oauth:<auth>",
+    "DeniedUsers": [
+        "streamelements",
+        "marbiebot",
+        "moobot"
+    ],
+    "AllowedRanks": [
+        "broadcaster",
+        "moderator"
+    ],
+    "AllowedPeople": [],
+    "Sub": 0,
+    "SubGiftBomb": 1,
+    "SubGift": 1,
+    "AverageResults": 1,
+    "AverageCommandErrors": 0,
+    "VotingResults": 1,
+    "Votes": 1,
+    "VotingCommandErrors": 1,
+    "Numbers": 1
+}
