@@ -7,7 +7,9 @@ When the bot has started, it will start listening to chat messages in the channe
 If at some point someone decides to calculate a vote or average, the information from the last 3 minutes will be used. <b>This means it is not needed to start a vote or average in advance</b> Note that if one user sends multiple votes or multiple values, newer values will override the older ones, so everyone only has one vote.
 
 This is an extention of my existing [TwitchCubieBot](https://github.com/CubieDev/TwitchCubieBot) program, but now with a convenient and simple GUI:
+![image](https://user-images.githubusercontent.com/37621491/59962273-5ec58200-94e3-11e9-9d85-3cb54c15f6f1.png)
 
+An explanation of this GUI will be provided below the explanation of the bot itself. 
 
 ---
 # Voting
@@ -60,16 +62,6 @@ The logging and chat output when `!average 0 100` was typed by someone with the 
 
 ---
 
-# Requirements
-* TwitchWebsocket
-
-Install this using `pip install git+https://github.com/CubieDev/TwitchWebsocket.git`
-
-This last library is my own [TwitchWebsocket](https://github.com/CubieDev/TwitchWebsocket) wrapper, which makes making a Twitch chat bot a lot easier.
-This repository can be seen as an implementation using this wrapper.
-
----
-
 # Settings
 This bot is controlled by a settings.txt file, which looks like:
 ```
@@ -106,6 +98,52 @@ This bot is controlled by a settings.txt file, which looks like:
 *Note that the example OAuth token is not an actual token, but merely a generated string to give an indication what it might look like.*
 
 I got my real OAuth token from https://twitchapps.com/tmi/.
+
+---
+# GUI
+Some of the values from the settings.txt file can also be edited in the GUI. 
+For reference, this is the GUI:
+
+![image](https://user-images.githubusercontent.com/37621491/59962273-5ec58200-94e3-11e9-9d85-3cb54c15f6f1.png)
+
+Let's clarify the functionality from the GUI:
+
+| **Button** | **Action** |
+| ---------- | ----------- |
+| Auth | This button will hide or unhide your Authentication token. This way you can hide it when you aren't changing it, so that it will not leak. |
+| Stop | This button is both "Stop" and "Run" at the same time. When the bot is running, the button will say Stop. While it is not, it will display "Run". Pressing this button will either stop the bot from running, or start the bot using the information filled in above. | 
+| Clear | Clears the console below |
+| Vote | Equivalent to typing `!vote` in chat. Calls a vote. |
+| Settings | Opens up a popup message, as shown on the left side in the screenshot. |
+| Save & Close | Closes the setting popup message, and saves the settings. |
+
+Note that the settings in the popup message refer to what will be shown in the console in the main GUI. This is the meaning of each section:
+
+| **Name** | **Meaning** |
+| -------- | ----------- |
+| Sub | If regular subscriptions should show up in the message box. |
+| Sub Gift Bomb | If sub mystery gifts (a handful subscriptions gifted to several randomly picked users) should show up in the message box. |
+| Sub Gift | If regular subscription gifts should show up in the message box. |
+| Average Results | If the results from `!average min max` should show up in the message box. |
+| Average Cmd Errors | If errors from incorrect usages of `!average` should show up in the message box. Eg: `No recent numbers found to take the average from` or `Max parameter should be larger than Min parameter`. |
+| Vote Results | If the results from `!vote min max` or `!vote` should show up in the message box. |
+| Votes | If individual votes should show up in the message box. Eg: `A` or `Y`. |
+| Vote Cmd Errors | If errors from incorrect usages of `!vote min max` or `!vote` should show up in the message box. Eg: `No votes found.` or `Max parameter should be larger than Min parameter`. |
+| Numbers | If individual numbers should show up in the message box. Eg: `23.0` or `12.4`. |
+
+---
+
+# Requirements
+* Python 3+ (Only tested on 3.6)
+
+Download Python online.
+
+* TwitchWebsocket
+
+Install this using `pip install git+https://github.com/CubieDev/TwitchWebsocket.git`
+
+This last library is my own [TwitchWebsocket](https://github.com/CubieDev/TwitchWebsocket) wrapper, which makes making a Twitch chat bot a lot easier.
+This repository can be seen as an implementation using this wrapper.
 
 ---
 
