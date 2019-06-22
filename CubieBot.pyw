@@ -222,7 +222,7 @@ class CubieBot:
             self.min = float(str.split(message)[1])
             self.max = float(str.split(message)[2])
             if self.min >= self.max:
-                out = "Max param should be larger than Min param"
+                out = "Max parameter should be larger than Min parameter"
                 logging.info(out)
                 if t == "Vote" and self.voting_command_errors or t == "Average" and self.average_command_errors:
                     self.app.add_message(out, True)
@@ -232,7 +232,7 @@ class CubieBot:
             else:
                 return True
         except:
-            out = "Parameter Vernacular Error"
+            out = "Parameter Error"
             if t == "Vote" and self.voting_command_errors or t == "Average" and self.average_command_errors:
                 self.app.add_message(out, True)
             logging.info(out)
