@@ -125,7 +125,7 @@ class App(threading.Thread):
     # Vote button functionality
     def vote(self):
         # Vote with text
-        self.bot.vote("Txt")
+        self.bot.command_vote(Message(":cubiedev!cubiedev@cubiedev.tmi.twitch.tv PRIVMSG #cubiedev :!vote"))
 
     def run(self):
         self.login_dict = {"Host": self.bot.host, "Port":self.bot.port, "Chan": self.bot.chan.replace("#", ""), "User": self.bot.nick, "Auth": self.bot.auth}
