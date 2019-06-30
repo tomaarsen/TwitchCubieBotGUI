@@ -19,9 +19,13 @@ Commands:
 </pre>
 This command will decide the winner between votes.
 <pre>
-<b>!vote min max</b>
+<b>!vote numbers</b>
 </pre>
-This command will decide the winner between numbers higher than min, and lower than max.
+This command will decide the winner between numbers.
+<pre>
+<b>!vote emotes</b>
+</pre>
+This command will decide the winner between emotes.
 
 Valid votes (for A) include:
 * A
