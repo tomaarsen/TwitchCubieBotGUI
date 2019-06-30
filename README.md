@@ -54,7 +54,7 @@ The logging and chat output when `!vote` was typed by someone with the appropria
 <pre>
 <b>B won with 74.24%.</b>
 </pre>
-The logging and chat output when `!vote 0 10` was typed by someone with the appropriate rank:
+The logging and chat output when `!vote numbers` was typed by someone with the appropriate rank:
 <pre>
 <b>3.0 won with 84.72%.</b>
 </pre>
