@@ -34,6 +34,8 @@ class Bot(CubieBot):
         self.view = AppView(self)
         # Override the settings with our own custom one
         Settings(self)
+        # Override the Capabilities to also get subscription data
+        self.capability = ["tags", "commands"]
     
     # Used from GUI
     def set_login_settings(self, host, port, chan, nick, auth):
@@ -60,12 +62,12 @@ class Bot(CubieBot):
         if m.type == "376":
             self.app.add_message("Successfully logged in as: {}.".format(self.nick), enter=True)
 
-        if m.type == "CAP * ACK":
+        elif m.type == "CAP * ACK":
             self.app.add_message("Successfully added requirement: {}.".format(", ".join(m.message.split("/")[1:])), enter=True)
 
-        if m.type == "366":
+        elif m.type == "366":
             self.app.add_message("Successfully joined: {}\nBot is active now.".format(self.chan), enter=True)
-        
+
         elif m.type == 'USERNOTICE':
             # If someone Subscribes, Gift Bombs or Gift Subs, and the corresponding setting is set to true.
             if (m.tags["msg-id"] in ["subgift", "anonsubgift"] and self.sub_gift) or \
