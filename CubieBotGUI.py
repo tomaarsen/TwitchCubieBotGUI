@@ -32,11 +32,13 @@ class Bot(CubieBot):
         super().__init__()
         # Override the original View used in CubieBot with our custom AppView
         self.view = AppView(self)
-        # Override the settings with our own custom one
-        Settings(self)
+        self.update_settings()
         # Override the Capabilities to also get subscription data
         self.capability = ["tags", "commands"]
-    
+
+    def update_settings(self):
+        Settings(self)
+
     # Used from GUI
     def set_login_settings(self, host, port, chan, nick, auth):
         self.host = host
