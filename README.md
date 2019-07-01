@@ -84,7 +84,17 @@ This bot is controlled by a settings.txt file, which looks like:
         "broadcaster",
         "moderator"
     ],
-    "AllowedPeople": []
+    "AllowedPeople": [],
+    "Sub": 1,
+    "SubGiftBomb": 1,
+    "SubGift": 1,
+    "AverageResults": 1,
+    "AverageCommandErrors": 1,
+    "VotingResults": 1,
+    "Votes": 1,
+    "VotingCommandErrors": 1,
+    "Numbers": 1,
+    "SaveChat": 0
 }
 ```
 
@@ -98,6 +108,8 @@ This bot is controlled by a settings.txt file, which looks like:
 | DeniedUsers     | List of (bot) names who's messages will not be included in voting and averages. | ["streamelements", "marbiebot", "moobot"] |
 | AllowedRanks  | List of ranks required to be able to perform the commands. | ["broadcaster", "moderator"] |
 | AllowedPeople | List of users who, even if they don't have the right ranks, will be allowed to perform the commands. | ["cubiedev"] |
+
+Everything below this point is linked to the Settings page of the GUI, explained below.
 
 *Note that the example OAuth token is not an actual token, but merely a generated string to give an indication what it might look like.*
 
