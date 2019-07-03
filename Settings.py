@@ -20,7 +20,8 @@ class Settings:
                                 data['Authentication'],
                                 data["DeniedUsers"],
                                 data["AllowedRanks"],
-                                data["AllowedPeople"]
+                                data["AllowedPeople"],
+                                data["LookbackTime"]
                                 )
                 bot.set_user_settings(
                                 data["Sub"],
@@ -51,6 +52,7 @@ class Settings:
                                     "DeniedUsers": ["streamelements", "marbiebot", "moobot"],
                                     "AllowedRanks": ["broadcaster", "moderator"],
                                     "AllowedPeople": [],
+                                    "LookbackTime": 30,
                                     "Sub": 0,
                                     "SubGiftBomb": 1,
                                     "SubGift": 1,
@@ -76,6 +78,7 @@ class Settings:
                                 "DeniedUsers": bot.denied_users,
                                 "AllowedRanks": bot.allowed_ranks,
                                 "AllowedPeople": bot.allowed_people,
+                                "LookbackTime": bot.lookback_time,
                                 "Sub": bot.sub,
                                 "SubGiftBomb": bot.sub_gift_bomb,
                                 "SubGift": bot.sub_gift,

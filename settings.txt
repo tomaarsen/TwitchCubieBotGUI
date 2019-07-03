@@ -14,6 +14,7 @@
         "moderator"
     ],
     "AllowedPeople": [],
+    "LookbackTime": 30,
     "Sub": 0,
     "SubGiftBomb": 1,
     "SubGift": 1,
