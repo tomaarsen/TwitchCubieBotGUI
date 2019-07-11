@@ -11,10 +11,9 @@ Log(__file__)
 import tkinter as tk
 import tkinter.scrolledtext as tkst
 import tkinter.font as tkFont
-import time, json
+import time, json, os, sys, threading
 from datetime import datetime
 from functools import reduce
-import threading
 
 class App(threading.Thread):
 
@@ -116,7 +115,8 @@ class App(threading.Thread):
         # Set the settings on the bot
         self.bot.set_user_settings(settings[0], settings[1], settings[2], settings[3], settings[4], settings[5], settings[6], settings[7], settings[8])
         # Update the file
-        Settings.update(self.bot)
+        path = os.path.join(sys.path[0], "settings.txt")
+        Settings.update(path, self.bot)
         # Make sure this popup can be opened again later
         self.settings_open = False
         # And remove the popup

@@ -4,45 +4,29 @@ logger = logging.getLogger(__name__)
 
 class Settings:
     """ Loads data from settings.txt into the bot """
-    def __init__(self, bot):
+    def __init__(self, path):
+        self.path = path
+    
+    def get_settings(self):
         logger.debug("Loading settings.txt file...")
         try:
             # Try to load the file using json.
             # And pass the data to the Bot class instance if this succeeds.
-            with open("settings.txt", "r") as f:
+            with open(self.path, "r") as f:
                 settings = f.read()
-                data = json.loads(settings)
-                data = json.loads(settings)
-                bot.set_settings(data['Host'],
-                                data['Port'],
-                                data['Channel'],
-                                data['Nickname'],
-                                data['Authentication'],
-                                data["DeniedUsers"],
-                                data["AllowedRanks"],
-                                data["AllowedPeople"],
-                                data["LookbackTime"]
-                                )
-                bot.set_user_settings(
-                                data["Sub"],
-                                data["SubGiftBomb"],
-                                data["SubGift"],
-                                data["AverageResults"],
-                                data["AverageCommandErrors"],
-                                data["VotingResults"],
-                                data["Votes"],
-                                data["VotingCommandErrors"],
-                                data["Numbers"]
-                                )
+                settings_dict = json.loads(settings)
                 logger.debug("Settings loaded into Bot.")
+                return [settings_dict[key] for key in settings_dict]
+
         except ValueError:
             logger.error("Error in settings file.")
             raise ValueError("Error in settings file.")
+
         except FileNotFoundError:
             # If the file is missing, create a standardised settings.txt file
             # With all parameters required.
             logger.error("Please fix your settings.txt file that was just generated.")
-            with open('settings.txt', 'w') as f:
+            with open(self.path, 'w') as f:
                 standard_dict = {
                                     "Host": "irc.chat.twitch.tv",
                                     "Port": 6667,
@@ -67,8 +51,8 @@ class Settings:
                 raise ValueError("Please fix your settings.txt file that was just generated.")
     
     @staticmethod
-    def update(bot):
-        with open('settings.txt', 'w') as f:
+    def update(path, bot):
+        with open(path, 'w') as f:
             standard_dict = {
                                 "Host": bot.host,
                                 "Port": bot.port,

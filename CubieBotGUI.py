@@ -1,7 +1,7 @@
 from TwitchCubieBot import CubieBot
 from TwitchCubieBot import View
 from TwitchCubieBot import MessageSource
-import json, time, logging, os
+import json, time, logging, os, sys
 
 from Log import Log
 Log(__file__)
@@ -37,7 +37,10 @@ class Bot(CubieBot):
         self.capability = ["tags", "commands"]
 
     def update_settings(self):
-        Settings(self)
+        path = os.path.join(sys.path[0], "settings.txt")
+        s = Settings(path)
+        self.host, self.port, self.chan, self.nick, self.auth, self.denied_users, self.allowed_ranks, self.allowed_people, self.lookback_time, self.sub, \
+            self.sub_gift_bomb, self.sub_gift, self.average_results, self.average_command_errors, self.voting_results, self.votes, self.voting_command_errors, self.numbers = s.get_settings()
 
     # Used from GUI
     def set_login_settings(self, host, port, chan, nick, auth):
