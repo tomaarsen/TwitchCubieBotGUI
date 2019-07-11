@@ -37,7 +37,9 @@ class Bot(CubieBot):
         self.capability = ["tags", "commands"]
 
     def update_settings(self):
-        Settings(self)
+        s = Settings()
+        self.host, self.port, self.chan, self.nick, self.auth, self.denied_users, self.allowed_ranks, self.allowed_people, self.lookback_time, self.sub, \
+            self.sub_gift_bomb, self.sub_gift, self.average_results, self.average_command_errors, self.voting_results, self.votes, self.voting_command_errors, self.numbers = s.get_settings()
 
     # Used from GUI
     def set_login_settings(self, host, port, chan, nick, auth):

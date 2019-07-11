@@ -11,10 +11,9 @@ Log(__file__)
 import tkinter as tk
 import tkinter.scrolledtext as tkst
 import tkinter.font as tkFont
-import time, json
+import time, json, threading
 from datetime import datetime
 from functools import reduce
-import threading
 
 class App(threading.Thread):
 
