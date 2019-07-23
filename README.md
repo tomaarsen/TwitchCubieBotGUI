@@ -175,6 +175,7 @@ This repository can be seen as an implementation using this wrapper.
 * [TwitchMarkovChain](https://github.com/CubieDev/TwitchMarkovChain)
 * [TwitchRhymeBot](https://github.com/CubieDev/TwitchRhymeBot)
 * [TwitchCubieBot](https://github.com/CubieDev/TwitchCubieBot)
+* [TwitchUrbanDictionary](https://github.com/CubieDev/TwitchUrbanDictionary)
 * [TwitchWeather](https://github.com/CubieDev/TwitchWeather)
 * [TwitchDeathCounter](https://github.com/CubieDev/TwitchDeathCounter)
 * [TwitchSuggestDinner](https://github.com/CubieDev/TwitchSuggestDinner)
