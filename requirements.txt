@@ -1,0 +1,2 @@
+git+git://github.com/CubieDev/TwitchCubieBot@master#egg=TwitchCubieBot
+git+git://github.com/CubieDev/TwitchWebsocket@master#egg=TwitchWebsocket
