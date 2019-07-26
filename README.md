@@ -152,19 +152,11 @@ Note that the settings in the popup message refer to what will be shown in the c
 ---
 
 # Requirements
-* Python 3+ (Only tested on 3.6)
+* [Python 3.6+](https://www.python.org/downloads/)
+* [Module requirements](requirements.txt)<br>
+Install these modules using `pip install -r requirements.txt`
 
-Download Python online.
-
-* TwitchWebsocket
-
-Install this using `pip install git+https://github.com/CubieDev/TwitchWebsocket.git`
-
-* TwitchCubieBot
-
-Install this using `pip install git+https://github.com/CubieDev/TwitchCubieBot.git`
-
-This last library is my own [TwitchWebsocket](https://github.com/CubieDev/TwitchWebsocket) wrapper, which makes making a Twitch chat bot a lot easier.
+Among these modules is my own [TwitchWebsocket](https://github.com/CubieDev/TwitchWebsocket) wrapper, which makes making a Twitch chat bot a lot easier.
 This repository can be seen as an implementation using this wrapper.
 
 ---
