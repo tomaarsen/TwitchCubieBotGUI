@@ -43,9 +43,13 @@ Any single letter can be a vote.
 # Averaging
 Command:
 <pre>
-<b>!average min max</b>
+<b>!average [min] [max]</b>
 </pre>
 This command will average all numbers between min and max send in the last 3 minutes.
+Example:
+<pre>
+<b>!average 0 100</b>
+</pre>
 
 ---
 # Examples
